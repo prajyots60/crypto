@@ -51,7 +51,7 @@ function Header() {
             >
               Crypto Hunter
             </Typography>
-            {/* <Button color="inherit">Login</Button> */}
+            <button id="install-button" style="display: none;">Install App</button>
             <Select
               variant="outlined"
               labelId="demo-simple-select-label"

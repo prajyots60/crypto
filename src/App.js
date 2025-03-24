@@ -13,6 +13,17 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+// Trigger PWA install prompt
+useEffect(() => {
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    // Show a custom "Install App" button
+    const installButton = document.getElementById('install-button');
+    installButton.style.display = 'block';
+    installButton.onclick = () => e.prompt();
+  });
+}, []);
+
 function App() {
   const classes = useStyles();
 
