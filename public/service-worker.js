@@ -79,6 +79,7 @@ self.addEventListener('fetch', (event) => {
 
 // Background Sync
 self.addEventListener('sync', (event) => {
+  console.log('Sync event received with tag:', event.tag);
   if (event.tag === 'update-crypto-data') {
     console.log('Background sync: updating crypto data');
     event.waitUntil(
@@ -115,6 +116,7 @@ async function updateCryptoData() {
 // });
 
 self.addEventListener('push', (event) => {
+  console.log('Push event received:', event);
   let data;
   try {
     data = event.data.json();
